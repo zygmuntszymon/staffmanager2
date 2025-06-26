@@ -10,12 +10,9 @@ class TaskPolicy
 {
     use HandlesAuthorization;
 
-    /**
-     * Determine whether the user can manage (edytować/usunąć) zadanie.
-     */
+
     public function manage(User $user, Task $task)
     {
-        // Tylko pracodawca może zarządzać zadaniami
         return $user->role === 'employer';
     }
 }

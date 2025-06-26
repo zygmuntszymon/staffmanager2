@@ -21,7 +21,6 @@ class RedemptionController extends Controller
 
         $user = auth()->user();
 
-        // stałe koszty benefitów
         $costs = [
             'vacation_day' => 2000,
             'cash_bonus'   => 4000,
@@ -34,7 +33,6 @@ class RedemptionController extends Controller
                 ->withErrors(['points' => 'Masz za mało punktów (potrzebujesz '.$pointsNeeded.' pkt).']);
         }
 
-        // odejmij punkty i zapisz
         $user->decrement('points', $pointsNeeded);
         $user->redemptions()->create([
             'benefit_type'  => $data['benefit_type'],

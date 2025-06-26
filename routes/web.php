@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('leaves/{leave}/reject',  [LeaveController::class,'reject'])
          ->name('leaves.reject');
 
-    // Benefity — TU WAŻNE: importujemy RedemptionController
+    // Benefity
     Route::resource('redemptions', RedemptionController::class)
          ->only(['index','store']);
 });

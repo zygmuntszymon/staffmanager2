@@ -13,7 +13,7 @@ class CreateLeavesTable extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->date('start_date');
             $table->date('end_date');
-            $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->enum('status', ['oczekujący', 'zatwierdzony', 'odrzucony'])->default('oczekujący');
             $table->timestamps();
         });
     }

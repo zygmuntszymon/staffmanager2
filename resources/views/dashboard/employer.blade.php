@@ -4,10 +4,8 @@
 
 <h1>Witaj {{ auth()->user()->name }} (Pracodawca)</h1>
 
-{{-- Przycisk otwierający modal dodawania zadania --}}
 <button id="openAddTaskModal">Dodaj nowe zadanie</button>
 
-{{-- Modal dodawania zadania --}}
 <div id="addTaskModal" style="display:none; position:fixed; top:0; left:0;
     width:100%; height:100%; background:rgba(0,0,0,0.6);">
     <div style="background:#3e3b44; padding:2rem; margin:5% auto; width:90%; max-width:500px; border-radius:8px; position:relative;">
@@ -31,7 +29,6 @@
     </div>
 </div>
 
-{{-- Ostatnie 5 zadań --}}
 <h2>Ostatnie zadania</h2>
 @if($tasks->isEmpty())
     <p>Brak zadań.</p>
@@ -54,17 +51,14 @@
                 <td>{{ $t->points }}</td>
                 <td>{{ $t->created_at->format('Y-m-d H:i') }}</td>
                 <td>
-                    {{-- Usuń --}}
                     <form method="POST" action="{{ route('tasks.destroy', $t) }}" style="display:inline">
                         @csrf @method('DELETE')
                         <button type="submit">Usuń</button>
                     </form>
-                    {{-- Edytuj --}}
                     <button onclick="openEditModal({{ $t->id }})">Edytuj</button>
                 </td>
             </tr>
 
-            {{-- Modal edycji dla każdego zadania --}}
             <div id="editTaskModal-{{ $t->id }}" style="display:none; position:fixed; top:0; left:0;
                 width:100%; height:100%; background:rgba(0,0,0,0.6);">
                 <div style="background:#3e3b44; padding:2rem; margin:5% auto; width:90%; max-width:500px; border-radius:8px; position:relative;">
@@ -93,7 +87,6 @@
     </table>
 @endif
 
-{{-- Ostatnie 5 wniosków urlopowych --}}
 <h2>Ostatnie wnioski urlopowe</h2>
 @if($leaves->isEmpty())
     <p>Brak wniosków.</p>
@@ -122,7 +115,6 @@
     </table>
 @endif
 
-{{-- Prosty skrypt do obsługi modalów --}}
 <script>
     document.getElementById('openAddTaskModal').onclick = () => {
         document.getElementById('addTaskModal').style.display = 'block';

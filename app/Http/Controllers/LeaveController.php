@@ -11,7 +11,7 @@ class LeaveController extends Controller
     {
         $user = auth()->user();
         if ($user->role==='employer') {
-            $leaves = Leave::where('status','pending')->get();
+            $leaves = Leave::where('status','oczekujący')->latest()->get();
         } else {
             $leaves = $user->leaves;
         }
@@ -32,12 +32,12 @@ class LeaveController extends Controller
     }
     public function approve(Leave $leave)
     {
-        $leave->update(['status'=>'approved']);
+        $leave->update(['status'=>'zatwierdzony']);
         return redirect()->back();
     }
     public function reject(Leave $leave)
     {
-        $leave->update(['status'=>'rejected']);
+        $leave->update(['status'=>'odrzucony']);
         return redirect()->back();
     }
 }

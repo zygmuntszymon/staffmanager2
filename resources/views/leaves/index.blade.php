@@ -41,7 +41,7 @@
             </table>
         @endif
 
-    @else {{-- pracownik --}}
+    @else
         <h1>Twoje wnioski urlopowe</h1>
 
         @if($leaves->isEmpty())
@@ -70,7 +70,10 @@
         @endif
 
         <p>
-            <a href="{{ route('leaves.create') }}">Złóż nowy wniosek urlopowy</a>
+
+            <a href="{{ route('leaves.create') }}">
+                <button type="button">Złóż nowy wniosek urlopowy</button>
+            </a>
         </p>
     @endif
 
