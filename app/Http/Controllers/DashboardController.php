@@ -13,7 +13,17 @@ class DashboardController extends Controller
         $user = auth()->user();
 
         if ($user->role === 'employer') {
-            $tasks = Task::latest()->get();
+            $filter = request('filter', 'last'); // domyślnie "last"
+            $query = Task::with('user');
+
+            if ($filter === 'completed') {
+                $query->where('status', 'completed');
+            } elseif ($filter === 'pending') {
+                $query->where('status', 'pending');
+            }
+
+            $tasks = $query->orderBy('created_at', 'desc')->take(5)->get();
+
             $leaves = Leave::with('user')
                 ->latest()
                 ->take(7)
@@ -22,8 +32,17 @@ class DashboardController extends Controller
             return view('dashboard.employer', compact('tasks', 'leaves'));
         }
 
-        $tasks = $user->tasks()->where('status', 'pending')->get();
-        $history = $user->tasks()->where('status', 'completed')->get();
+        $tasks = $user->tasks()
+            ->where('status', 'pending')
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
+
+        $history = $user->tasks()
+            ->where('status', 'completed')
+            ->orderBy('created_at', 'desc')
+            ->take(5)
+            ->get();
 
         return view('dashboard.employee', compact('tasks', 'history'));
     }

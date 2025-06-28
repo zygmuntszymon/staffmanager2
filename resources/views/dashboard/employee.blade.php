@@ -43,7 +43,6 @@
     @endif
   </div>
 
-  {{-- MODALE SZCZEGÓŁÓW --}}
   @foreach($tasks as $t)
   <div id="detailsTaskModal-{{ $t->id }}" class="modal">
     <div class="modal-content">
@@ -95,7 +94,6 @@
     @endif
   </div>
 
-  {{-- MODALE SZCZEGÓŁÓW DLA HISTORII --}}
   @foreach($history as $h)
   <div id="detailsTaskModal-{{ $h->id }}" class="modal">
     <div class="modal-content">
@@ -114,12 +112,12 @@
   @endforeach
 
   <script>
-    function openDetailsModal(id) { 
-        document.getElementById('detailsTaskModal-' + id).classList.add('open'); 
+    function openDetailsModal(id) {
+        document.getElementById('detailsTaskModal-' + id).classList.add('open');
     }
-    
-    function closeDetailsModal(id) { 
-        document.getElementById('detailsTaskModal-' + id).classList.remove('open'); 
+
+    function closeDetailsModal(id) {
+        document.getElementById('detailsTaskModal-' + id).classList.remove('open');
     }
   </script>
 @endsection

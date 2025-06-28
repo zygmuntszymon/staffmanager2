@@ -27,7 +27,7 @@
     }
 
     body {
-      margin: 0; 
+      margin: 0;
       padding: 0;
       background-color: var(--primary-bg);
       font-family: "Roboto", sans-serif;
@@ -46,13 +46,13 @@
       border-bottom: 1px solid var(--border-color);
       flex-shrink: 0;
     }
-    
+
     header .logo {
       height: 52px;
       margin-right: 1rem;
     }
-    
-    header a, 
+
+    header a,
     header span {
       color: var(--text-color);
       margin-right: 2rem;
@@ -60,11 +60,11 @@
       font-size: 1.2rem;
       transition: all 0.2s;
     }
-    
+
     header span:nth-child(2) {
       color: gold;
     }
-    
+
     header a:hover {
       color: #aaa;
     }
@@ -74,7 +74,6 @@
       flex-grow: 1;
     }
 
-    /* sekcja panelowa */
     .section {
       background: var(--secondary-bg);
       padding: 1.5rem;
@@ -83,10 +82,9 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* formularze i tabele */
-    button, 
-    input, 
-    select, 
+    button,
+    input,
+    select,
     textarea {
       background: var(--tertiary-bg);
       border: 1px solid var(--border-color);
@@ -96,7 +94,7 @@
       font-size: 1rem;
       transition: all 0.2s;
     }
-    
+
     button {
       background: var(--button-bg);
       color: var(--button-color);
@@ -107,7 +105,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    
+
     button:hover {
       background: var(--button-hover);
     }
@@ -119,54 +117,53 @@
       border-radius: 4px;
       overflow: hidden;
     }
-    
-    th, 
+
+    th,
     td {
       border: 1px solid var(--border-color);
       padding: 0.75rem;
       background: var(--tertiary-bg);
       text-align: left;
     }
-    
+
     th {
       background: var(--modal-bg);
       font-weight: 500;
     }
 
-    /* modal */
     .modal {
       display: none;
       position: fixed;
-      top: 0; 
+      top: 0;
       left: 0;
-      width: 100%; 
+      width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.6);
       z-index: 1000;
       align-items: center;
       justify-content: center;
     }
-    
+
     .modal.open {
       display: flex;
     }
-    
+
     .modal-content {
       background: var(--modal-bg);
       padding: 2rem;
-      width: 90%; 
+      width: 90%;
       max-width: 600px;
       border-radius: 8px;
       position: relative;
     }
-    
+
     .modal-close {
       position: absolute;
-      top: 1rem; 
+      top: 1rem;
       right: 1rem;
-      background: none; 
+      background: none;
       border: none;
-      color: var(--text-color); 
+      color: var(--text-color);
       font-size: 1.5rem;
       cursor: pointer;
       display: flex;
@@ -177,26 +174,26 @@
       border-radius: 50%;
       transition: background 0.2s;
     }
-    
+
     .modal-close:hover {
       background: rgba(255, 255, 255, 0.1);
     }
-    
+
     .modal-content h2 {
-      margin-top: 0; 
+      margin-top: 0;
       margin-bottom: 1.5rem;
     }
-    
+
     .form-group {
       margin-bottom: 1.5rem;
     }
-    
+
     .form-group label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: 500;
     }
-    
+
     .form-group input,
     .form-group textarea,
     .form-group select {
@@ -207,7 +204,7 @@
       border: 1px solid var(--border-color);
       border-radius: 4px;
     }
-    
+
     .button-link {
       display: inline-flex;
       align-items: center;
@@ -220,54 +217,52 @@
       font-weight: 500;
       transition: background 0.2s;
     }
-    
+
     .button-link:hover {
       background: var(--modal-bg);
     }
-    
-    /* Dodatkowe style dla formularzy */
+
     .form-button {
       text-align: center;
       margin-top: 1.5rem;
     }
-    
+
     .form-button button {
       padding: 0.75rem 2rem;
       font-size: 1rem;
     }
-    
-    /* Responsywność */
+
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         gap: 1rem;
         padding: 1rem 0.5rem;
       }
-      
+
       header > div {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
       }
-      
-      header a, 
+
+      header a,
       header span {
         margin: 0.5rem;
       }
-      
+
       main {
         padding: 1rem;
       }
-      
+
       .section {
         padding: 1rem;
       }
-      
+
       table {
         font-size: 0.9rem;
       }
-      
-      th, 
+
+      th,
       td {
         padding: 0.5rem;
       }
