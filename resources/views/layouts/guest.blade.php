@@ -10,7 +10,7 @@
 
     body {
       margin: 0; padding: 0;
-      background-color: #36393F;    /* zmienione tło */
+      background-color: #36393F;
       font-family: "Roboto", sans-serif;
       display: flex; align-items: center; justify-content: center;
       height: 100vh; color: #fff;
