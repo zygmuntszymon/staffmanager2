@@ -11,8 +11,8 @@
 
                 <div class="section" style="margin-top: 1rem;">
                     <a href="{{ route('dashboard', ['filter' => 'last']) }}" class="button-link">Ostatnie zadania</a>
-                    <a href="{{ route('dashboard', ['filter' => 'completed']) }}" class="button-link">Zakończone zadania</a>
                     <a href="{{ route('dashboard', ['filter' => 'pending']) }}" class="button-link">Oczekujące zadania</a>
+                    <a href="{{ route('dashboard', ['filter' => 'completed']) }}" class="button-link">Zakończone zadania</a>
                 </div>
 
             </div>
