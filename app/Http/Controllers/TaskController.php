@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function index() {/* zobaczone w dash */}
+    public function index() {}
     public function store(Request $r)
     {
         $data = $r->validate([
@@ -35,8 +35,8 @@ class TaskController extends Controller
     public function complete(Task $task)
     {
         $user = auth()->user();
-        if ($task->assigned_to==$user->id && $task->status=='pending') {
-            $task->update(['status'=>'completed']);
+        if ($task->assigned_to==$user->id && $task->status=='oczekujące') {
+            $task->update(['status'=>'zakończone']);
             $user->increment('points',$task->points);
         }
         return redirect()->back();
